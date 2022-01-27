@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pokedex.Controls.LoadingControl">
+
+    <ContentView.Content>
+        <Grid BackgroundColor="{StaticResource DefaultPageBackgroundColor}"
+              VerticalOptions="FillAndExpand"
+              HorizontalOptions="FillAndExpand">
+            <ActivityIndicator IsRunning="True" />
+        </Grid>
+    </ContentView.Content>
+
+</ContentView>
