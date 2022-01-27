@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                 xmlns:controls="clr-namespace:Pokedex.Controls"
+                 xmlns:common="clr-namespace:Pokedex.Common"
+                 xmlns:extensions="http://xamarin.com/schemas/2020/toolkit"
+                 x:Class="Pokedex.Views.PokemonDetailDialogPage">
+
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation PositionIn="Center"
+                                   PositionOut="Center"
+                                   ScaleIn="1.2"
+                                   ScaleOut="0.8"
+                                   DurationIn="250"
+                                   DurationOut="250"
+                                   EasingIn="SinOut"
+                                   EasingOut="SinIn"
+                                   HasBackgroundAnimation="True" />
+    </pages:PopupPage.Animation>
+
+    <pages:PopupPage.Content>
+        <Frame HorizontalOptions="{OnPlatform Default=Fill, UWP=CenterAndExpand}"
+               VerticalOptions="CenterAndExpand"
+               BackgroundColor="{StaticResource FrameBackgroundColor}"
+               WidthRequest="480"
+               Padding="12">
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+                  RowSpacing="12"
+                  ColumnDefinitions="*,*">
+
+                <Image Source="{common:ImageResource close.png}"
+                       WidthRequest="24"
+                       HeightRequest="24"
+                       HorizontalOptions="End"
+                       VerticalOptions="Center"
+                       Grid.Row="0"
+                       Grid.Column="1">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="CloseImageOnTapped" />
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <StackLayout Grid.Row="1"
+                             Grid.Column="0">
+                    <Label Text="{extensions:Translate PokemonDetailIdLabel}"
+                           Style="{StaticResource PokemonDetailTitleLabelStyle}" />
+
+                    <Label x:Name="PokemonDetailId"
+                           Style="{StaticResource PokemonDetailLabelStyle}" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="1"
+                             Grid.Column="1">
+                    <Label Text="{extensions:Translate PokemonDetailNameLabel}"
+                           Style="{StaticResource PokemonDetailTitleLabelStyle}" />
+
+                    <Label x:Name="PokemonDetailName"
+                           Style="{StaticResource PokemonDetailLabelStyle}" />
+                </StackLayout>
+
+                <Image x:Name="PokemonDetailSprite"
+                       Style="{StaticResource PokemonDetailImageStyle}"
+                       Grid.Row="2"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="2" />
+
+                <StackLayout Grid.Row="3"
+                             Grid.Column="0">
+                    <Label Text="{extensions:Translate PokemonDetailHeightLabel}"
+                           Style="{StaticResource PokemonDetailTitleLabelStyle}" />
+
+                    <Label x:Name="PokemonDetailHeight"
+                           Style="{StaticResource PokemonDetailLabelStyle}" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="3"
+                             Grid.Column="1">
+                    <Label Text="{extensions:Translate PokemonDetailWeightLabel}"
+                           Style="{StaticResource PokemonDetailTitleLabelStyle}" />
+
+                    <Label x:Name="PokemonDetailWeight"
+                           Style="{StaticResource PokemonDetailLabelStyle}" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="4"
+                             Grid.Column="0"
+                             Grid.ColumnSpan="2">
+                    <Label Text="{extensions:Translate PokemonDetailTypesLabel}"
+                           Style="{StaticResource PokemonDetailTitleLabelStyle}" />
+
+                    <StackLayout x:Name="PokemonDetailTypes"
+                                 Orientation="Horizontal"
+                                 HorizontalOptions="Center">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <controls:TypeChipControl Text="{Binding PokemonType.Name}" />
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </Frame>
+    </pages:PopupPage.Content>
+</pages:PopupPage>
