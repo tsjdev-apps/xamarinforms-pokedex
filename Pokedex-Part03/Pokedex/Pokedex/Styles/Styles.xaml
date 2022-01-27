@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="Pokedex.Styles.Styles">
+
+    <!-- Colors -->
+    <Color x:Key="NavigationBarBackgroundColor">#1E3D59</Color>
+    <Color x:Key="NavigationBarTextColor">#FFFFFF</Color>
+
+    <Color x:Key="DefaultTextColor">#DE000000</Color>
+    <Color x:Key="InfoTextColor">#99000000</Color>
+
+    <Color x:Key="DefaultPageBackgroundColor">#FFFFFF</Color>
+
+    <Color x:Key="FrameBackgroundColor">#F5F0E1</Color>
+
+    <Color x:Key="AccentColor">#FF6E40</Color>
+
+    <!-- Styles -->
+    <Style TargetType="NavigationPage"
+           ApplyToDerivedTypes="True">
+        <Setter Property="BarBackground"
+                Value="{StaticResource NavigationBarBackgroundColor}" />
+        <Setter Property="BarTextColor"
+                Value="{StaticResource NavigationBarTextColor}" />
+        <Setter Property="BackgroundColor"
+                Value="{StaticResource DefaultPageBackgroundColor}" />
+    </Style>
+
+    <Style TargetType="ContentPage"
+           ApplyToDerivedTypes="True">
+        <Setter Property="Visual"
+                Value="Material" />
+        <Setter Property="Padding"
+                Value="16" />
+        <Setter Property="BackgroundColor"
+                Value="{StaticResource DefaultPageBackgroundColor}" />
+    </Style>
+
+    <Style TargetType="Label">
+        <Setter Property="TextColor"
+                Value="{StaticResource DefaultTextColor}" />
+    </Style>
+
+    <Style x:Key="PokemonFrameStyle"
+           TargetType="Frame">
+        <Setter Property="BackgroundColor"
+                Value="{StaticResource FrameBackgroundColor}" />
+        <Setter Property="Padding"
+                Value="8" />
+        <Setter Property="CornerRadius"
+                Value="8" />
+    </Style>
+
+    <Style x:Key="PokemonIdLabelStyle"
+           TargetType="Label">
+        <Setter Property="TextColor"
+                Value="{StaticResource InfoTextColor}" />
+        <Setter Property="HorizontalTextAlignment"
+                Value="End" />
+        <Setter Property="FontAttributes"
+                Value="Italic" />
+        <Setter Property="FontSize"
+                Value="Micro" />
+    </Style>
+
+    <Style x:Key="PokemonNameStyle"
+           TargetType="Label">
+        <Setter Property="TextColor"
+                Value="{StaticResource DefaultTextColor}" />
+        <Setter Property="HorizontalTextAlignment"
+                Value="Center" />
+        <Setter Property="FontSize"
+                Value="Caption" />
+        <Setter Property="TextTransform"
+                Value="Uppercase" />
+    </Style>
+
+    <Style TargetType="ActivityIndicator">
+        <Setter Property="Color"
+                Value="{StaticResource AccentColor}" />
+        <Setter Property="WidthRequest"
+                Value="50" />
+        <Setter Property="HeightRequest"
+                Value="50" />
+    </Style>
+
+</ResourceDictionary>
