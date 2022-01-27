@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB"
+		  version="3.0"
+		  toolsVersion="17701"
+		  targetRuntime="iOS.CocoaTouch"
+		  propertyAccessControl="none"
+		  useAutolayout="YES"
+		  useTraitCollections="YES"
+		  colorMatched="YES"
+		  initialViewController="X5k-f2-b5h">
+	<device id="retina5_5"
+			orientation="portrait"
+			appearance="light"/>
+	<dependencies>
+		<deployment identifier="iOS"/>
+		<plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin"
+				version="17703"/>
+		<capability name="documents saved in the Xcode 8 format"
+					minToolsVersion="8.0"/>
+	</dependencies>
+	<scenes>
+		<!--View Controller-->
+		<scene sceneID="gAE-YM-kbH">
+			<objects>
+				<viewController id="X5k-f2-b5h"
+								sceneMemberID="viewController">
+					<layoutGuides>
+						<viewControllerLayoutGuide type="top"
+												   id="Y8P-hJ-Z43"/>
+						<viewControllerLayoutGuide type="bottom"
+												   id="9ZL-r4-8FZ"/>
+					</layoutGuides>
+					<view key="view"
+						  contentMode="scaleToFill"
+						  id="yd7-JS-zBw">
+						<rect key="frame"
+							  x="0.0"
+							  y="0.0"
+							  width="414"
+							  height="736"/>
+						<autoresizingMask key="autoresizingMask"
+										  widthSizable="YES"
+										  heightSizable="YES"/>
+						<subviews>
+							<imageView clipsSubviews="YES"
+									   userInteractionEnabled="NO"
+									   contentMode="scaleAspectFill"
+									   horizontalHuggingPriority="251"
+									   verticalHuggingPriority="251"
+									   image="background.png"
+									   translatesAutoresizingMaskIntoConstraints="NO" 
+									   id="NNH-I9-bfx">
+								<rect key="frame"
+									  x="0.0"
+									  y="0.0"
+									  width="414"
+									  height="736"/>
+								<color key="tintColor"
+									   white="0.0"
+									   alpha="0.0"
+									   colorSpace="custom"
+									   customColorSpace="genericGamma22GrayColorSpace"/>
+							</imageView>
+							<imageView clipsSubviews="YES"
+									   userInteractionEnabled="NO"
+									   contentMode="scaleAspectFit"
+									   horizontalHuggingPriority="251"
+									   verticalHuggingPriority="251"
+									   image="splashscreen.png"
+									   translatesAutoresizingMaskIntoConstraints="NO"
+									   id="Hpd-Cl-JOs">
+								<rect key="frame"
+									  x="107"
+									  y="268"
+									  width="200"
+									  height="200"/>
+								<constraints>
+									<constraint firstAttribute="width"
+												constant="200"
+												id="Ame-tf-ABy"/>
+									<constraint firstAttribute="height"
+												constant="200"
+												id="h1H-V7-tCL"/>
+								</constraints>
+							</imageView>
+						</subviews>
+						<color key="backgroundColor"
+							   white="0.0"
+							   alpha="0.0"
+							   colorSpace="custom"
+							   customColorSpace="genericGamma22GrayColorSpace"/>
+						<color key="tintColor"
+							   white="0.0"
+							   alpha="0.0"
+							   colorSpace="custom"
+							   customColorSpace="genericGamma22GrayColorSpace"/>
+						<constraints>
+							<constraint firstItem="NNH-I9-bfx"
+										firstAttribute="leading"
+										secondItem="yd7-JS-zBw"
+										secondAttribute="leading"
+										id="1p6-kC-3gq"/>
+							<constraint firstItem="9ZL-r4-8FZ"
+										firstAttribute="top"
+										secondItem="NNH-I9-bfx"
+										secondAttribute="bottom"
+										id="6oC-iY-XWk"/>
+							<constraint firstItem="Hpd-Cl-JOs"
+										firstAttribute="centerY"
+										secondItem="yd7-JS-zBw"
+										secondAttribute="centerY"
+										id="7DU-SQ-9MR"/>
+							<constraint firstAttribute="trailing"
+										secondItem="NNH-I9-bfx"
+										secondAttribute="trailing"
+										id="HKv-81-TlY"/>
+							<constraint firstItem="NNH-I9-bfx"
+										firstAttribute="top"
+										secondItem="Y8P-hJ-Z43"
+										secondAttribute="bottom"
+										id="ivN-Gn-Uvr"/>
+							<constraint firstItem="Hpd-Cl-JOs"
+										firstAttribute="centerX"
+										secondItem="yd7-JS-zBw"
+										secondAttribute="centerX"
+										id="z6q-BY-lxe"/>
+						</constraints>
+					</view>
+				</viewController>
+				<placeholder placeholderIdentifier="IBFirstResponder"
+							 id="XAI-xm-WK6"
+							 userLabel="First Responder"
+							 sceneMemberID="firstResponder"/>
+			</objects>
+			<point key="canvasLocation"
+				   x="349"
+				   y="339"/>
+		</scene>
+	</scenes>
+	<resources>
+		<image name="background.png"
+			   width="831"
+			   height="1800"/>
+		<image name="splashscreen.png"
+			   width="642"
+			   height="642"/>
+	</resources>
+</document>
