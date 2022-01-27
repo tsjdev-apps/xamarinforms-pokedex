@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:ffImage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+                    x:Class="Pokedex.Styles.Styles">
+
+    <!-- Colors -->
+    <Color x:Key="NavigationBarBackgroundColor">#1E3D59</Color>
+    <Color x:Key="NavigationBarTextColor">#FFFFFF</Color>
+
+    <Color x:Key="DefaultTextColor">#DE000000</Color>
+    <Color x:Key="LightTextColor">#FFFFFF</Color>
+    <Color x:Key="InfoTextColor">#99000000</Color>
+
+    <Color x:Key="DefaultPageBackgroundColor">#FFFFFF</Color>
+
+    <Color x:Key="FrameBackgroundColor">#F5F0E1</Color>
+
+    <Color x:Key="AccentColor">#FF6E40</Color>
+
+    <!-- Styles -->
+    <Style TargetType="NavigationPage"
+           ApplyToDerivedTypes="True">
+        <Setter Property="BarBackground"
+                Value="{StaticResource NavigationBarBackgroundColor}" />
+        <Setter Property="BarTextColor"
+                Value="{StaticResource NavigationBarTextColor}" />
+        <Setter Property="BackgroundColor"
+                Value="{StaticResource DefaultPageBackgroundColor}" />
+    </Style>
+
+    <Style TargetType="ContentPage"
+           ApplyToDerivedTypes="True">
+        <Setter Property="Visual"
+                Value="Material" />
+        <Setter Property="Padding"
+                Value="16" />
+        <Setter Property="BackgroundColor"
+                Value="{StaticResource DefaultPageBackgroundColor}" />
+    </Style>
+
+    <Style TargetType="Label">
+        <Setter Property="TextColor"
+                Value="{StaticResource DefaultTextColor}" />
+    </Style>
+
+    <Style x:Key="PokemonFrameStyle"
+           TargetType="Frame">
+        <Setter Property="BackgroundColor"
+                Value="{StaticResource FrameBackgroundColor}" />
+        <Setter Property="Padding"
+                Value="8" />
+        <Setter Property="CornerRadius"
+                Value="8" />
+    </Style>
+
+    <Style x:Key="PokemonIdLabelStyle"
+           TargetType="Label">
+        <Setter Property="TextColor"
+                Value="{StaticResource InfoTextColor}" />
+        <Setter Property="HorizontalTextAlignment"
+                Value="End" />
+        <Setter Property="FontAttributes"
+                Value="Italic" />
+        <Setter Property="FontSize"
+                Value="Micro" />
+    </Style>
+
+    <Style x:Key="PokemonNameStyle"
+           TargetType="Label">
+        <Setter Property="TextColor"
+                Value="{StaticResource DefaultTextColor}" />
+        <Setter Property="HorizontalTextAlignment"
+                Value="Center" />
+        <Setter Property="FontSize"
+                Value="Caption" />
+        <Setter Property="TextTransform"
+                Value="Uppercase" />
+    </Style>
+
+    <Style TargetType="ActivityIndicator">
+        <Setter Property="Color"
+                Value="{StaticResource AccentColor}" />
+        <Setter Property="WidthRequest"
+                Value="50" />
+        <Setter Property="HeightRequest"
+                Value="50" />
+    </Style>
+
+    <Style x:Key="TypeChipLabelStyle"
+           TargetType="Label">
+        <Setter Property="TextColor"
+                Value="{StaticResource LightTextColor}" />
+        <Setter Property="TextTransform"
+                Value="Uppercase" />
+        <Setter Property="MaxLines"
+                Value="1" />
+    </Style>
+
+    <Style x:Key="TypeChipFrameStyle"
+           TargetType="Frame">
+        <Setter Property="Margin"
+                Value="0" />
+        <Setter Property="Padding"
+                Value="8" />
+        <Setter Property="BorderColor"
+                Value="#000000" />
+    </Style>
+
+    <Style x:Key="PokemonDetailTitleLabelStyle"
+           TargetType="Label">
+        <Setter Property="TextTransform"
+                Value="Uppercase" />
+        <Setter Property="FontAttributes"
+                Value="Italic" />
+        <Setter Property="HorizontalTextAlignment"
+                Value="Center" />
+        <Setter Property="VerticalTextAlignment"
+                Value="Center" />
+    </Style>
+
+    <Style x:Key="PokemonDetailLabelStyle"
+           TargetType="Label">
+        <Setter Property="TextTransform"
+                Value="Uppercase" />
+        <Setter Property="FontAttributes"
+                Value="Bold" />
+        <Setter Property="HorizontalTextAlignment"
+                Value="Center" />
+        <Setter Property="VerticalTextAlignment"
+                Value="Center" />
+    </Style>
+
+    <Style x:Key="PokemonDetailImageStyle"
+           TargetType="ffImage:CachedImage">
+        <Setter Property="WidthRequest"
+                Value="150" />
+        <Setter Property="HeightRequest"
+                Value="150" />
+        <Setter Property="Aspect"
+                Value="AspectFit" />
+        <Setter Property="VerticalOptions"
+                Value="Center" />
+        <Setter Property="HorizontalOptions"
+                Value="Center" />
+        <Setter Property="CacheDuration"
+                Value="14" />
+        <Setter Property="CacheType"
+                Value="Disk" />
+    </Style>
+
+</ResourceDictionary>

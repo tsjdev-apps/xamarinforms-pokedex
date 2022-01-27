@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:controls="clr-namespace:Pokedex.Controls"
+             x:Class="Pokedex.Views.OverviewPage"
+             Title="{xct:Translate OverviewPageTitle}"
+             BindingContext="{Binding OverviewPageViewModel, 
+                Source={StaticResource ViewModelLocator}}">
+
+    <ContentPage.Content>
+        <Grid>
+            <CollectionView ItemsSource="{Binding Pokemons}"
+                            RemainingItemsThreshold="1"
+                            RemainingItemsThresholdReachedCommand="{Binding LoadMorePokemonsCommand}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout HorizontalItemSpacing="12"
+                                     VerticalItemSpacing="12"
+                                     Orientation="Vertical"
+                                     Span="{OnPlatform Default=2, UWP=3}" />
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <controls:PokemonOverviewControl PokemonDetail="{Binding .}" />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <controls:LoadingControl IsVisible="{Binding IsLoading}" />
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>
