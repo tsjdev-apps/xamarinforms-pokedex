@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:init="clr-namespace:Pokedex.Init"
+             xmlns:styles="clr-namespace:Pokedex.Styles"
+             x:Class="Pokedex.App">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <styles:Styles />
+            </ResourceDictionary.MergedDictionaries>
+
+            <init:ViewModelLocator x:Key="ViewModelLocator" />
+        </ResourceDictionary>
+    </Application.Resources>
+
+</Application>

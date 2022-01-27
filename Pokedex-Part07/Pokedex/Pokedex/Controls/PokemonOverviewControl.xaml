@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffImage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="Pokedex.Controls.PokemonOverviewControl"
+             x:Name="root">
+
+    <ContentView.Content>
+        <Frame Style="{StaticResource PokemonFrameStyle}">
+            <Grid RowDefinitions="Auto,Auto,Auto">
+                <Label Text="{Binding PokemonDetail.Id, StringFormat='#{0:D3}', Source={x:Reference root}}"
+                       Style="{StaticResource PokemonIdLabelStyle}"
+                       Grid.Row="0" />
+
+                <ffImage:CachedImage Source="{Binding PokemonDetail.Sprite.Image.Artwork.ImagePath, Source={x:Reference root}}"
+                                     CacheDuration="14"
+                                     CacheType="Disk"
+                                     WidthRequest="75"
+                                     HeightRequest="75"
+                                     Aspect="AspectFit"
+                                     Grid.Row="1" />
+
+                <Label Text="{Binding PokemonDetail.Name, Source={x:Reference root}}"
+                       Style="{StaticResource PokemonNameStyle}"
+                       Grid.Row="2" />
+            </Grid>
+
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnTapped" />
+            </Frame.GestureRecognizers>
+        </Frame>
+    </ContentView.Content>
+</ContentView>
