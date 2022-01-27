@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="Pokedex.Views.OverviewPage"
+             Title="{xct:Translate OverviewPageTitle}"
+             BindingContext="{Binding OverviewPageViewModel, 
+                Source={StaticResource ViewModelLocator}}">
+
+    <ContentPage.Content>
+        <Grid RowDefinitions="Auto,*">
+            <Button Text="Get Pokémon Types"
+                    Command="{Binding GetPokemonTypesCommand}"
+                    Grid.Row="0" />
+
+            <CollectionView ItemsSource="{Binding PokemonTypes}"
+                            Grid.Row="1">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout HorizontalItemSpacing="12"
+                                     VerticalItemSpacing="12"
+                                     Orientation="Vertical"
+                                     Span="2" />
+                </CollectionView.ItemsLayout>
+            </CollectionView>
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>
